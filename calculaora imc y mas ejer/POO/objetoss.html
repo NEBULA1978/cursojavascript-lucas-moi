@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        var persona = {
+            "nombre": "Ramon",
+            "apellido": "Pascual",
+            "telefono": 3454544566,
+            "email":"rpascualet@gmail.com",
+            "direccion": "Avenida siempre viva 123",
+            "empleo": {
+                "nombre": "Programador",
+                "localidad":"España"
+            }
+            //creamos subobjetos    
+        }
+
+        alert(persona.empleo.nombre)
+
+        persona.telefono = "no tiene"//creamos subpropiedades nuevas
+        //alert(persona) no funciona object object sale
+        //alert(persona.apellido.nombre.etc) asi si
+        console.log(persona);
+
+    </script>
+
+</body>
+</html>

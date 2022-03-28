@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <b>Nombre del Post: </b> <span id="txtNombrePost"></span> <br/>
+    <b>¿Esta Completo?</b> <span id="txtCompleto"></span>
+
+
+    <script>
+
+
+
+function cargarJson(){
+  //  fetch('https://jsonplaceholder.typicode.com/todos/1')trae info de est url api
+  //  .then(response => response.json())
+ //   .then(jsonCargado);
+  let promesa = new Promise(resolver => {
+     setTimeout(() => {
+       let json = {
+         "userId": 1,
+         "id": 1,
+         "title": "delectus aut autem",
+         "completed": false
+  }
+  resolver(json);
+  }, 5000);
+
+  });
+  
+  promesa.then(json => {
+    jsonCargado(json);
+  }) 
+} 
+
+function jsonCargado(json){
+    let spanNombrePost = document.getElementById("txtNombrePost");
+    spanNombrePost.innerText = json.title;  
+
+    let spanCompleto = document.getElementById("txtCompleto");
+
+  //  spanCompleto.innerText = json.completed ? "Esta incompleto" : "Esta incompleto";
+
+    if (json.completed){
+        spanCompleto.innerText = "Esta completo"; 
+    }else{
+     spanCompleto.innerText = "Esta incompleto";
+    }
+    //voy por 3h59 importar api me falla me sale b fetch.html:35 Uncaught (in promise) ReferenceError: spanCompleto is not defined
+    //at jsonCargado (fetch.html:35)importar informacion de api
+    
+    console.log(json);
+}
+
+cargarJson();
+
+    </script>
+
+</body>
+</html>

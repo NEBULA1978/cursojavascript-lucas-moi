@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadisticas COVID</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <div>
+        <h1>Estadisticas del COVID19</h1>
+        
+        <b>Fecha</b> <input id="inputFecha" type="date" /><br/>
+        <b>Pais</b> 
+        <select id="selectPais">
+            <option value="Spain">España</option>
+            <option value="Italy">Italia</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Chile">Chile</option>
+            <option value="Peru">Peru</option>
+            <option value="Paraway">Paraway</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Germany">Alemania</option>
+
+
+        </select>
+        <br />
+        <button id="btnCargar">Cargar Estadisticas</button>
+    <br/>
+    <ul>
+        <li>Confirmados <span id="today_confirmed"></span></li>
+        <li>Muertes <span id="today_deaths"></span></li>
+        <li>Pacientes hospitalizados con sintomas <span id="today_hospitalised_patients_whit_symtoms"></span></li>
+        <li>Cuidados intensivos <span id="today_intensive_care"></span></li>
+        <li>Nuevos confirmados <span id="today_new_confirmed"></span></li>
+        <li>Nuevas muertes <span id="day_new_deaths"></span></li>
+        <li>Nuevos pacientes hospìtalizados con sintomas <span id=""></span></li>
+        <li>Nuevos cuidados intensivos <span id="today_new_hospitalised_patients_with_symptoms"></span></li>
+        <li>Nuevos casos abiertos <span id="today_new_intensive_care"></span></li>
+        <li>Nuevos recuperados <span id="today_new_open_cases"></span></li>
+        <li>Nuevos total pacientes hospitalizados <span 
+        id="today_new_total_hospitalised_patients"></span></li>
+        
+    </ul>
+
+    
+
+
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

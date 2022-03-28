@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+  <label>Nombre</label><input id="txtNombre" type="text" /><br/>
+  <label>Apellido</label><input id="txtApellido" type="text" /><br/>
+  <label>Telefono</label><input id="txtTelefono" type="text" /><br/>
+  <label>Email</label><input id="txtEmail" type="text" /><br/>
+  <button id="btnAgregar">Agregar</button>
+
+  <div id="listado">
+
+
+  </div>
+
+
+    <script>
+        
+        window.onload = iniciar;//una vez se cargue la pagina actua funcion abajo
+
+        var  personas = [];
+
+        function iniciar(){
+            var btnAgregar = document.getElementById("btnAgregar");
+            btnAgregar.addEventListener("click", clickBtnAgregar);
+
+        }
+
+        function clickBtnAgregar(){
+            //alert("click")
+            //var nombre = txt.value;
+            var nombre = document.getElementById("txtNombre").value;
+            var apellido = document.getElementById("txtApellido").value;
+            var telefono= document.getElementById("txtTelefono").value;
+            var email = document.getElementById("txtEmail").value;
+            //alert(email)
+            //creamos objeto persona
+            var persona = {
+                "nombre": nombre,
+                "apellido": apellido,
+                "telefono": telefono,
+                "email": email
+            }
+            personas.push(persona);//wardo objeto personas dentro de persona
+            mostrarPersonas();
+        }
+
+        function mostrarPersonas(){
+            var listado = document.getElementById("listado");
+            var html = "";
+            for (var persona of personas){
+                
+            // html += 'Nombre: ${persona.nombre} '
+                html += persona.nombre + ' ' + persona.apellido + ' ' + persona.telefono + ' ' +
+                persona.email + '<br/>';
+                
+
+            }
+            listado.innerHTML = html;
+        }
+        
+        /*
+        var persona = {
+            "nombre": "Ramon",
+            "apellido": "Pascual",
+            "telefono": 3454544566,
+            "email":"rpascualet@gmail.com",
+            "direccion": "Avenida siempre viva 123",
+            "empleo": {
+                "nombre": "Programador",
+                "localidad":"España"
+            }
+            //creamos subobjetos    
+        }
+
+        alert(persona.empleo.nombre)
+
+        persona.telefono = "no tiene"//creamos subpropiedades nuevas
+        //alert(persona) no funciona object object sale
+        //alert(persona.apellido.nombre.etc) asi si
+        console.log(persona);*/
+
+    </script>
+
+</body>
+</html>
